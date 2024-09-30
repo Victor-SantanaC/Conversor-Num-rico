@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marise's Machine</title>
+<style>
+ .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(https://mauropennafort.com.br/wp-content/uploads/2023/06/matrix-5361690_1920-1-1-1024x653.png) no-repeat center center fixed;
+            background-size: cover;
+            z-index: 0;
+        }
+
+        .content-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 95vh; 
+            margin: auto;
+            padding: 20px;
+            overflow: auto; 
+            color: rgb(0, 255, 13);
+            border-radius: 10px;
+        }
+</style>
+
+</head>
+
+<body bgcolor="#000000" class="background" style="backdrop-filter: blur(7px);">
+        <div class="content-container">
+<center>
+        <h1>Simulador de Sistemas Numéricos</h1>
+        <h3>(Calculadora de sistemas numéricos!!!) Beta</h3>
+                        
+        <iframe src="https://giphy.com/embed/lQDdDwdZpfYRn1MsJy" width="150" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            
+        <h3>Decimal:</h3>
+        <input id="Input_decimal" type="text" placeholder="Digite o valor em decimal">
+        <br><br>
+        <button onclick="converterDecimal()">Converter Decimal</button>
+        <div id="decimalResultado"></div>
+            
+        <h3>Binário:</h3>
+        <input id="Input_binary" type="text" placeholder="Digite o valor em binário">
+        <br><br>
+        <button onclick="converterBinario()">Converter Binário</button>
+        <div id="binaryResultado"></div>
+            
+        <h3>Octal:</h3>
+        <input id="Input_octal" type="text" placeholder="Digite o valor em octal">
+        <br><br>
+        <button onclick="converterOctal()">Converter Octal</button>
+        <div id="octalResultado"></div>
+            
+        <h3>Hexadecimal:</h3>
+        <input id="Input_hex" type="text" placeholder="Digite o valor em hexadecimal">
+        <br><br>
+        <button onclick="converterHexadecimal()">Converter Hexadecimal</button>
+        <div id="hexResultado"></div>
+</center>
+        </div>
+
+<script>
+
+    function converterDecimal() {
+        const decimal = parseInt(document.getElementById('Input_decimal').value, 10)
+        const binario = decimal.toString(2)
+        const octal = decimal.toString(8)
+        const hexadecimal = decimal.toString(16).toUpperCase()
+
+        document.getElementById('decimalResultado').innerHTML = 
+            `<p>Binário: ${binario}</p><p>Octal: ${octal}</p><p>Hexadecimal: ${hexadecimal}</p>`
+    }
+
+    function converterBinario() {
+        const binario = document.getElementById('Input_binary').value
+        const decimal = parseInt(binario, 2)
+        const octal = decimal.toString(8)
+        const hexadecimal = decimal.toString(16).toUpperCase()
+
+        document.getElementById('binaryResultado').innerHTML = 
+            `<p>Decimal: ${decimal}</p><p>Octal: ${octal}</p><p>Hexadecimal: ${hexadecimal}</p>`
+    }
+
+    function converterOctal() {
+        const octal = document.getElementById('Input_octal').value
+        const decimal = parseInt(octal, 8)
+        const binario = decimal.toString(2)
+        const hexadecimal = decimal.toString(16).toUpperCase()
+
+        document.getElementById('octalResultado').innerHTML = 
+            `<p>Decimal: ${decimal}</p><p>Binário: ${binario}</p><p>Hexadecimal: ${hexadecimal}</p>`
+    }
+
+    function converterHexadecimal() {
+        const hexadecimal = document.getElementById('Input_hex').value
+        const decimal = parseInt(hexadecimal, 16)
+        const binario = decimal.toString(2)
+        const octal = decimal.toString(8)
+
+        document.getElementById('hexResultado').innerHTML = 
+            `<p>Decimal: ${decimal}</p><p>Binário: ${binario}</p><p>Octal: ${octal}</p>`
+    }
+</script></body></html>
